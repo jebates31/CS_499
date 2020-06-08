@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="module_phil" default="compile.module.phil">
+  <dirname property="module.phil.basedir" file="${ant.file.module_phil}"/>
+  
+  <property name="module.jdk.home.phil" value="${project.jdk.home}"/>
+  <property name="module.jdk.bin.phil" value="${project.jdk.bin}"/>
+  <property name="module.jdk.classpath.phil" value="${project.jdk.classpath}"/>
+  
+  <property name="compiler.args.phil" value="-encoding UTF-8 -source 1.8 -target 1.8 ${compiler.args}"/>
+  
+  <property name="phil.output.dir" value="${module.phil.basedir}/out/production/phil"/>
+  <property name="phil.testoutput.dir" value="${module.phil.basedir}/out/test/phil"/>
+  
+  <path id="phil.module.bootclasspath">
+    <!-- Paths to be included in compilation bootclasspath -->
+  </path>
+  
+  <path id="phil.module.production.classpath">
+    <path refid="${module.jdk.classpath.phil}"/>
+  </path>
+  
+  <path id="phil.runtime.production.module.classpath">
+    <pathelement location="${phil.output.dir}"/>
+  </path>
+  
+  <path id="phil.module.classpath">
+    <path refid="${module.jdk.classpath.phil}"/>
+    <pathelement location="${phil.output.dir}"/>
+  </path>
+  
+  <path id="phil.runtime.module.classpath">
+    <pathelement location="${phil.testoutput.dir}"/>
+    <pathelement location="${phil.output.dir}"/>
+  </path>
+  
+  
+  <patternset id="excluded.from.module.phil">
+    <patternset refid="ignored.files"/>
+  </patternset>
+  
+  <patternset id="excluded.from.compilation.phil">
+    <patternset refid="excluded.from.module.phil"/>
+  </patternset>
+  
+  <path id="phil.module.sourcepath">
+    <dirset dir="${module.phil.basedir}">
+      <include name="src"/>
+    </dirset>
+  </path>
+  
+  
+  <target name="compile.module.phil" depends="compile.module.phil.production,compile.module.phil.tests" description="Compile module phil"/>
+  
+  <target name="compile.module.phil.production" depends="register.custom.compilers" description="Compile module phil; production classes">
+    <mkdir dir="${phil.output.dir}"/>
+    <javac2 destdir="${phil.output.dir}" debug="${compiler.debug}" nowarn="${compiler.generate.no.warnings}" memorymaximumsize="${compiler.max.memory}" fork="true" executable="${module.jdk.bin.phil}/javac">
+      <compilerarg line="${compiler.args.phil}"/>
+      <bootclasspath refid="phil.module.bootclasspath"/>
+      <classpath refid="phil.module.production.classpath"/>
+      <src refid="phil.module.sourcepath"/>
+      <patternset refid="excluded.from.compilation.phil"/>
+    </javac2>
+    
+    <copy todir="${phil.output.dir}">
+      <fileset dir="${module.phil.basedir}/src">
+        <patternset refid="compiler.resources"/>
+        <type type="file"/>
+      </fileset>
+    </copy>
+  </target>
+  
+  <target name="compile.module.phil.tests" depends="register.custom.compilers,compile.module.phil.production" description="compile module phil; test classes" unless="skip.tests"/>
+  
+  <target name="clean.module.phil" description="cleanup module">
+    <delete dir="${phil.output.dir}"/>
+    <delete dir="${phil.testoutput.dir}"/>
+  </target>
+</project>
