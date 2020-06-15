@@ -17,16 +17,16 @@ I have been in the SNHU Computer Science filed for almost three years now. It ha
 
 
 ### Data Structures Enhancement
-https://github.com/jebates31/CS_499/tree/master/Data-Structures-Enhancement
+[Data Structures Enhancement GitHub] (https://github.com/jebates31/CS_499/tree/master/Data-Structures-Enhancement)
   This artifact is from the intro into Java class I took almost a year and a half ago. In this artifact, we were asked to write a program for a Zoo. The key to this program is to limit access to the user that is login in. So, the zookeepers would see fewer options than the vet and so on. 
 This class was probably the most difficult in my program. I was new at programing in general and this was my first introductions to Java. The Class seemed to move at a pace that I struggled to keep up with. On the final artifact, I was able to get everything figured out except the encryption of the passwords.  
 For my Data Structure Enhancement, I decided to create the encryption necessary to hide someone's credentials as they log in to the system. To do this I used the MD5 Digest code to run the credentials through a key generator. Pretty much if the two keys come out the same on the other side then they pass, and the user is granted access. If they do not match access is denied. Also, if you just type the key in from the code the access is denied it must go through the MD5 program to authenticate the credentials.  
 ### Software Engineering/Design
-(https://github.com/jebates31/CS_499/tree/master/Software-Engineering)
+[Software Engineering/Design] (https://github.com/jebates31/CS_499/tree/master/Software-Engineering)
 
   For this artifact, I would like to enchase exchange my code and dashboard on the Raspberry pi system. In the final, we were asked to provide a working weather station. I would like to enchase this by adding pressure and light measurement to this to enhance the weather station and get more data. I would also like to edit the dashboard to make it a little more readable. This project is close to what I would like to do more of in my career so I think this would be a great opportunity to dive further into this. 
 ### DB Enhancement
-https://github.com/jebates31/CS_499/tree/master/Software-Engineering
+[DB Enhancement] (https://github.com/jebates31/CS_499/tree/master/Software-Engineering)
 Databases were the hardest for me to pick up. I think because there were not as many classes on them so the opportunity to work with the different databases were few and far between. 
 For my Database Enhancement I decided to create a RESTFUL API that could add, delete, and create posts on a blog site. This was a bit of a challenge because I did not have access to a MongoDB server. I was able to get around this be downloading Visual Studio Code. This gave me the terminal along with the tools to create a Mongo DB route and post in Java. To test this, I used a free instance of AWS running Mongo DB. I was able to post to this database and make changes. 
 
