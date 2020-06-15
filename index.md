@@ -1,4 +1,8 @@
-    I have been in the SNHU Computer Science filed for almost three years now. It has been a hard 3 years of learning something completely new and intriguing, but I have enjoyed the challenge. I  believe this program has helped me immensity in my current position. Some of the top skills I have learned has been: 
+
+
+I have been in the SNHU Computer Science filed for almost three years now. It has been a hard 3 years of learning something completely new and intriguing, but I have enjoyed the challenge. I  believe this program has helped me immensity in my current position. Some of the top skills I have learned has been: 
+
+
 -	Programing ( Java and Python Specify) 
 -	Project Management ( Agile and waterfall methods) 
 -	Database ( SQL and MongoDB) 
